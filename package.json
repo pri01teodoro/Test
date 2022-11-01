@@ -1,10 +1,14 @@
 {
   "name": "test",
+  "type": "module",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js",
+    "test:watch":"node --experimental-vm-modules node_modules/jest/bin/jest.js --watchAll",
+    "test:coverage":"node --experimental-vm-modules node_modules/jest/bin/jest.js --watchAll --coverage"
+
   },
   "keywords": [],
   "author": "",
