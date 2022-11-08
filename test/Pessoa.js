@@ -9,7 +9,7 @@ class Pessoa {
 
 class Empregado extends Pessoa {
     salario;
-    constructor(nome, email, nascimento){
+    constructor(nome, email, nascimento, salario){
         super(nome, email, nascimento);
         this.salario = salario
     }
