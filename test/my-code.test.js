@@ -1,4 +1,4 @@
-import {soma, subtracao, divisao, multiplicacao} from '../test/my-code'
+import {soma, subtracao, divisao, multiplicacao, potencia, areaTriangulo, areaRetangulo} from '../test/my-code'
 
 /* describe('Testes de calculadora com valores inteiros', () => {
      test('Deve retornar a soma de 1 + 1 com toBe', () => {
@@ -41,6 +41,27 @@ describe('Testes de calculadora com valores inteiros', () => {
         const retornado = multiplicacao(30,1);
         expect(retornado).toBe(esperado);
      })
+
+     it('Deve retornar a potência quadrada de um valor inteiro', () => {
+      const esperado = 25;
+      const retornado = potencia(5);
+      expect(retornado).toBe(esperado)
+
+   })
+
+   it('Deve calcular a área de um triângulo com valores inteiros', () => {
+      const esperado = 8;
+      const retornado = areaTriangulo(4,4);
+      expect(retornado).toBe(esperado)
+
+   })
+
+   it('Deve calcular a área de um retângulo com valores inteiros', () => {
+      const esperado = 16;
+      const retornado = areaRetangulo(4,4);
+      expect(retornado).toBe(esperado)
+
+   })
 })
 
 describe('Testes de calculadora com valores flutuantes', () => {
@@ -67,12 +88,33 @@ describe('Testes de calculadora com valores flutuantes', () => {
         const retornado = multiplicacao(60,0.5);
         expect(retornado).toBe(esperado);
      })
+
+     it('Deve retornar a potência quadrada de um valor flutuante', () => {
+      const esperado = 2.25;
+      const retornado = potencia(1.5);
+      expect(retornado).toBe(esperado)
+
+   })
+
+   it('Deve calcular a área de um triângulo com valores flutuantes', () => {
+      const esperado = 2.55;
+      const retornado = areaTriangulo(2.55, 2);
+      expect(retornado).toBeCloseTo(esperado) //arredonda valores
+
+   })
+
+   it('Deve calcular a área de um retângulo com valores flutuantes', () => {
+      const esperado = 4.41;
+      const retornado = areaRetangulo(2.1,2.1);
+      expect(retornado).toBe(esperado)
+
+   })
 })
 
 
 
 describe('Testes de calculadora com valores negativos', () => {
-    it('Deve retornar a soma de 2 valores negativos', () => {
+    it('Deve retornar a soma de 2 valores negativos', () => {  //it.skip para pular o teste
        const esperado = -30;
        const retornado = soma(-15, -15);
        expect(retornado).toBe(esperado);
@@ -95,4 +137,11 @@ describe('Testes de calculadora com valores negativos', () => {
         const retornado = multiplicacao(-10,3);
         expect(retornado).toBe(esperado);
      })
+
+     it('Deve retornar a potência quadrada de um valor negativo', () => {
+      const esperado = 100;
+      const retornado = potencia(-10);
+      expect(retornado).toBe(esperado)
+
+   })
 })
