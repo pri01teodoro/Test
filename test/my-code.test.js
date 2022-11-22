@@ -1,6 +1,6 @@
-import {soma, subtracao, divisao, multiplicacao, potencia, areaTriangulo, areaRetangulo} from '../test/my-code'
-
-/* describe('Testes de calculadora com valores inteiros', () => {
+import {soma, subtracao, divisao, multiplicacao, potencia, areaTriangulo, areaRetangulo, media} from '../test/my-code'
+/* 
+describe('Testes de calculadora com valores inteiros', () => {
      test('Deve retornar a soma de 1 + 1 com toBe', () => {
         expect(1+1).toBe(2); //asserção/afirmação
     })
@@ -14,7 +14,7 @@ import {soma, subtracao, divisao, multiplicacao, potencia, areaTriangulo, areaRe
     it('Deve retornar se a string "e" existe na palavra "Teste" com o toMatch', () => {
         expect('Teste').toMatch(/e/) //verifica se existe a string dentro de outra string
     }) 
-})*/
+})
 
 
 describe('Testes de calculadora com valores inteiros', () => {
@@ -144,4 +144,51 @@ describe('Testes de calculadora com valores negativos', () => {
       expect(retornado).toBe(esperado)
 
    })
+ 
 })
+
+describe('Testes da calculadora com valores inteiros', () => {
+   it ('Deve retornar a exceção para divisor == 0', () => {
+      expect(()=>divisao(25,0)).toThrow();
+   })
+   it ('Não deve retornar a exceção para divisor > 0', () => {
+      expect(()=>divisao(25,2)).not.toThrow(); //
+   })
+}) */
+
+var val1
+var val2 
+var val3
+
+beforeAll(()=> {
+    console.log("Antes dos testes");
+    val1= 4
+    val2= 8
+    val3= 7
+});
+
+afterEach(()=>{
+    console.log("Depois de cada teste");
+    val1= 3
+    val2= 5
+    val3= 4
+});
+
+afterAll (()=>{
+    console.log("Após os testes");
+    val1= null;
+    val2= null;
+    val3= null;
+});
+
+describe ('Checando média',() => {
+  it('Deve retornar se a média das notas 4, 8, 7 é maior que 6 ', () => {
+    console.log(val1+ "" + val2 + "" + val3);
+    expect(media(val1,val2,val3)).toBeGreaterThanOrEqual(6);
+  });
+  it('Deve retornar se a média das notas 3, 5, 4 é menor que 6 ', () => {
+    console.log(val1+ "" + val2 + "" + val3);
+    expect(media(val1,val2,val3)).toBeLessThanOrEqual(6);
+  });
+  
+});

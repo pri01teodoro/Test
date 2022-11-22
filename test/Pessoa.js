@@ -1,8 +1,8 @@
 class Pessoa {
-    Pessoa(nome, email, nascimento){
-        this.nome = new nome;
-        this.email = new email;
-        this.nascimento = new nascimento;
+    constructor(nome, email, nascimento){
+        this.nome = nome;
+        this.email = email;
+        this.nascimento = nascimento;
     }
 
 }
